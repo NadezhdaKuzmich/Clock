@@ -1,0 +1,120 @@
+body {
+    min-height: 100vh;
+}
+
+#wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1150px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+img {
+    vertical-align: top;
+    max-width: 100%;
+    height: auto;
+}
+
+.clock {
+    position: relative;
+    width: 600px;
+    margin: 20px auto;
+}
+
+.sec,
+.min,
+.hour {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 50%;
+    width: auto;
+    transform: translate(-50%, 0) rotate(0);
+    transform-origin: 50% 100%;
+}
+
+.sec {
+    animation: sec 60s infinite steps(60);
+}
+
+.min {
+    animation: minute 3600s linear infinite;
+}
+
+.hour {
+    animation: hour 43200s linear infinite;
+}
+
+.alarm {
+    animation: alarm 120s 12s linear infinite;
+    visibility: hidden;
+}
+
+.alert { 
+    background: #E41931;
+    color: #fff;
+    max-width: 300px;
+	border-radius: 50px;
+    margin: 20px auto 0;
+	padding: 10px;
+	text-align: center;
+	animation: animate_pulse 1.5s infinite;    
+}
+
+@keyframes sec {
+    0% {
+        transform: translate(-50%, 0) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, 0) rotate(360deg);
+    }
+}
+
+@keyframes minute {
+    0% {
+        transform: translate(-50%, 0) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, 0) rotate(360deg);
+    }
+}
+
+@keyframes hour {
+    0% {
+        transform: translate(-50%, 0) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, 0) rotate(360deg);
+    }
+}
+
+@keyframes alarm {
+    0% {
+        visibility: hidden;
+            }
+    90% {
+        visibility: hidden;
+            }
+    91% {
+        visibility: visible;
+            }
+    100% {
+        visibility: visible;
+        }
+}
+ 
+@keyframes animate_pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(228, 25, 49, 0.4);
+	}
+	70% {
+		box-shadow: 0 0 0 10px rgba(228, 25, 49, 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(228, 25, 49, 0);
+	}
+}
